@@ -32,21 +32,16 @@
         </div>
     </div>
 
-    <div class="h1"> Liste des convention :</div>
-
-<%--    <jsp:useBean id="conventions" scope="page" type="java.util.List">--%>
-<%--        <jsp:setProperty name="conventions" property=""></jsp:setProperty>--%>
-<%--    </jsp:useBean>--%>
+    <div class="h1"> Liste des conventions :</div>
     <c:forEach items="${conventions}" var="convention">
         <div class="row mb-3 bg-light">
             <div class="col-12">
                 <div class="card bg-light">
                     <div class="card-body text-black">
-                        ${conventions}
-                        <h5 class="card-title">convention-${convention.index}</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                        <a href="#" class="btn btn-primary">Voir Plus</a>
-                        <a href="#" class="btn btn-primary">Participer</a>
+                        <h5 class="card-title">convention---${convention.getId()}</h5>
+                        <p class="card-text">${convention.getObjetConvention()}</p>
+                        <a href="convention.url" class="btn btn-primary">Voir Plus</a>
+                        <a href="convention.url" class="btn btn-primary">Participer</a>
                     </div>
                 </div>
             </div>

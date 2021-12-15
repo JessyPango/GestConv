@@ -18,7 +18,7 @@ public class Convention {
     @Column(name = "date_edition", nullable = false)
     private LocalDate dateEdition;
 
-    @Column(name = "objet_convention", nullable = false, length = 45)
+    @Column(name = "objet_convention", nullable = false)
     private String objetConvention;
 
     @Column(name = "date_entree_vigueur", nullable = false)

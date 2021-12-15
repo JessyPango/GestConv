@@ -1,15 +1,20 @@
 package tn.ipsas.gestconv.servlet;
 
+import tn.ipsas.gestconv.dao.ConventionDAO;
+
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "index", value = "/index")
+@WebServlet(name = "index", urlPatterns ={"/", "/index"})
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/index.jsp");
+        request.setAttribute("conventions", ConventionDAO.getAllConvention());
+        request.getServletContext()
+                        .getRequestDispatcher("/index.jsp")
+                                .forward(request, response);
     }
 
     @Override

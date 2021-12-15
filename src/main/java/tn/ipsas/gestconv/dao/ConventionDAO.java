@@ -22,7 +22,9 @@ public class ConventionDAO {
      */
     public static void saveConvention(Convention convention) {
         Transaction transaction = null;
-        try (Session session = HibernateUtil.getSessionFactory().openSession()) {
+        try  {
+            SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+            Session session = sessionFactory.openSession();
             // start a transaction
             transaction = session.beginTransaction();
             // save the convention object

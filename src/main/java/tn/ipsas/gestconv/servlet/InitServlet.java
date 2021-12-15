@@ -17,13 +17,4 @@ public class InitServlet extends HttpServlet {
         super();
     }
 
-//    public void init(ServletConfig config) throws ServletException {
-//
-//        try {
-//			DatabaseConnectionFactory.getConnectionFactory().init();
-//		} catch (IOException e) {
-//			config.getServletContext().log(e.getLocalizedMessage(),e);
-//		}
-//    }
-
 }

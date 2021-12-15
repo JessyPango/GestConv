@@ -37,7 +37,8 @@ public class UserHibernateTest {
         ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                 .applySettings(configuration.getProperties()).build();
         SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-
+        Session session = sessionFactory.openSession();
+        System.out.println(session);
         System.out.println("Hibernate Java Config serviceRegistry created");
     }
 }

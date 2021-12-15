@@ -4,8 +4,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="META-INF:hibernate.cfg.xml" value="8065e66e-85f3-486f-8589-0e028e3b5cde" />
-          <unit-entry name="hibernate.cfg.xml" value="46087c5f-842a-4bf3-8b21-bb1a1a0e95d2" />
+          <unit-entry name="hibernate.cfg.xml" value="a66656f8-4110-4152-8b2c-d3cab4d3435e" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/hibernate.cfg.xml" />
@@ -39,7 +38,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="GestConv" />
+          <factory-entry name="GestConv" value="a66656f8-4110-4152-8b2c-d3cab4d3435e" />
           <factory-entry name="noname-persistence.xml@350" />
         </datasource-mapping>
         <naming-strategy-map />

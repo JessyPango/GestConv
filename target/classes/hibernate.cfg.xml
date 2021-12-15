@@ -17,5 +17,8 @@
         <property name="hbm2ddl.auto">update</property>
 
         <mapping class="tn.ipsas.gestconv.bean.User" />
+        <mapping class="tn.ipsas.gestconv.bean.Convention" />
+        <mapping class="tn.ipsas.gestconv.bean.Participant" />
+        <mapping class="tn.ipsas.gestconv.bean.ParticipantConvention" />
     </session-factory>
 </hibernate-configuration>

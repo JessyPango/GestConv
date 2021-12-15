@@ -8,6 +8,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.Locale;
 
 @WebServlet(name = "addconv" , urlPatterns={"/convention/add"})
 public class ConventionServlet extends HttpServlet {
@@ -28,7 +29,7 @@ public class ConventionServlet extends HttpServlet {
 
         Convention convention = new Convention();
         convention.setObjetConvention(objetConvention);
-        convention.setTypeConvention(typeConvention);
+        convention.setTypeConvention(typeConvention.toLowerCase());
         convention.setDateEntreeVigueur(dateEntreeVigueur);
         convention.setDateExpiration(dateExpiration);
 

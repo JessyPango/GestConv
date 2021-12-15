@@ -27,7 +27,7 @@
                 <p class="small text-danger"> ${errMsg}</p>
 
             </div>
-            <form method="post" action="add" >
+            <form method="post" action="addconv" >
                 <div class="mb-3 row">
                     <label for="type_convention" class="col-sm-4 col-form-label">Selectionner un type :</label>
                     <div class="col-sm-8">

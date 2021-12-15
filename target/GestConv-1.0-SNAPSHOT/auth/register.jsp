@@ -27,7 +27,7 @@
                 Donnez un login et un mots de passe qui vous permettrons de vous
                 authentifiez lors de vos prochains connection.
             </p>
-            <form method="post" action="register" class="d-flex justify-content-center align-items-center flex-column mb-3">
+            <form method="post" action="/register" class="d-flex justify-content-center align-items-center flex-column mb-3">
                 <div class="form-floating w-75">
                     <input type="text" name="login" class="form-control" id="nameRegister"
                            placeholder="Nom de la structure">
