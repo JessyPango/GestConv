@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpaBuddyIdeaProjectConfig" ddlActionDbType="mysql">
+    <option name="defaultUnitInitialized" value="true" />
+    <option name="reverseEngineeringLastDbConnectionId" value="5e6a4719-f27e-44fb-8fb1-5ec8c0a4430a" />
+    <option name="reLastEntityCreationPackage" value="src/main/java/tn/ipsas/gestconv/bean" />
+    <option name="reIgnoreSlowDbConnections">
+      <ignoreDs id="5e6a4719-f27e-44fb-8fb1-5ec8c0a4430a" />
+    </option>
+  </component>
+</project>
