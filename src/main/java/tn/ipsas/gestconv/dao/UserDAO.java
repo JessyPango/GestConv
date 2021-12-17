@@ -4,11 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import tn.ipsas.gestconv.bean.User;
-import tn.ipsas.gestconv.db.connection.DatabaseConnectionFactory;
 import tn.ipsas.gestconv.utils.HibernateUtil;
 
-import java.sql.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class UserDAO {
@@ -16,7 +13,7 @@ public class UserDAO {
     /**
      * @param user Save User
      */
-    public static void  saveUser(User user) {
+    public static void saveUser(User user) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
@@ -37,7 +34,7 @@ public class UserDAO {
     /**
      * @param user Update User
      */
-    public static void  updateUser(User user) {
+    public static void updateUser(User user) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction
@@ -57,7 +54,7 @@ public class UserDAO {
     /**
      * @param id Delete User
      */
-    public static void  deleteUser(int id) {
+    public static void deleteUser(int id) {
 
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {

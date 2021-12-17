@@ -6,6 +6,7 @@
     <option name="reLastEntityCreationPackage" value="src/main/java/tn/ipsas/gestconv/bean" />
     <option name="reIgnoreSlowDbConnections">
       <ignoreDs id="5e6a4719-f27e-44fb-8fb1-5ec8c0a4430a" />
+      <ignoreDs id="a66656f8-4110-4152-8b2c-d3cab4d3435e" />
     </option>
   </component>
 </project>
