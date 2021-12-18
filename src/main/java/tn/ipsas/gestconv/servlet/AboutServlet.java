@@ -9,7 +9,9 @@ import java.io.IOException;
 public class AboutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/about.jsp");
+        request.getServletContext()
+                .getRequestDispatcher("/templates/about.jsp")
+                .forward(request, response);
     }
 
     @Override

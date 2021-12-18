@@ -8,6 +8,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%--<%@page contentType="text/html" pageEncoding="UTF-8"%>--%>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 
 <t:genericpage>
@@ -18,9 +19,6 @@
     <jsp:attribute name="css">
 
 <%--        <%@include file="/static/css/bootstrap.css"%>--%>
-    </jsp:attribute>
-    <jsp:attribute name="js">
-
     </jsp:attribute>
     <jsp:attribute name="header">
             <jsp:include page="/templates/base/header.jsp"/>

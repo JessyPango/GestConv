@@ -13,7 +13,7 @@ public class IndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("conventions", ConventionDAO.getAllConvention());
         request.getServletContext()
-                        .getRequestDispatcher("/index.jsp")
+                        .getRequestDispatcher("/templates/index.jsp")
                                 .forward(request, response);
     }
 
