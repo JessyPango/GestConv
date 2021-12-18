@@ -4,7 +4,7 @@
 <meta name="author" content="">
 <meta name="generator" content="Hugo 0.84.0">
 <!-- Bootstrap core CSS -->
-<link href="${param.src}static/css/bootstrap.css" rel="stylesheet">
+<link href="${param.src}static/css/bootstrap.css" rel="stylesheet" type="text/css">
 
 <style>
     .bd-placeholder-img {
@@ -53,5 +53,5 @@
 
 
 <!-- Custom styles for this template -->
-<link href="${param.src}static/css/cover.css" rel="stylesheet">
-<link href="${param.src}static/css/signin.css" rel="stylesheet">
+<link href="${param.src}static/css/cover.css" rel="stylesheet" type="text/css">
+<link href="${param.src}static/css/signin.css" rel="stylesheet" type="text/css">
