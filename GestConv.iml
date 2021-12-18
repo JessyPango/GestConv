@@ -60,8 +60,10 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.25" level="project" />
     <orderEntry type="library" name="Maven: com.google.protobuf:protobuf-java:3.11.4" level="project" />
-    <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:4.0.1" level="project" />
     <orderEntry type="library" name="Maven: javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:jsp-api:2.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:servlet-api:2.4" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.search:hibernate-search-mapper-orm:6.0.7.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.search:hibernate-search-engine:6.0.7.Final" level="project" />
     <orderEntry type="library" name="Maven: org.hibernate.search:hibernate-search-mapper-pojo-base:6.0.7.Final" level="project" />
