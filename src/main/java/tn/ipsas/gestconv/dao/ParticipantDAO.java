@@ -3,8 +3,10 @@ package tn.ipsas.gestconv.dao;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import tn.ipsas.gestconv.bean.*;
+import tn.ipsas.gestconv.bean.Convention;
 import tn.ipsas.gestconv.bean.Participant;
+import tn.ipsas.gestconv.bean.ParticipantConvention;
+import tn.ipsas.gestconv.bean.ParticipantConventionId;
 import tn.ipsas.gestconv.utils.HibernateUtil;
 
 import java.time.LocalDate;
@@ -132,11 +134,10 @@ public class ParticipantDAO {
     }
 
     /**
-     *
      * @param idParticipant id of participant
-     * @param idConvention id of convention
+     * @param idConvention  id of convention
      */
-    public static void joinConvention(int idParticipant, int idConvention){
+    public static void joinConvention(int idParticipant, int idConvention) {
         Transaction transaction = null;
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             // start a transaction

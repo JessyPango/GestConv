@@ -15,7 +15,9 @@ public class registerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        response.sendRedirect("auth/register.jsp");
+        request.getServletContext()
+                .getRequestDispatcher("/templates/auth/register.jsp")
+                .forward(request, response);
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

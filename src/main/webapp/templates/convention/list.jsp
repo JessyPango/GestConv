@@ -11,7 +11,7 @@
 <!doctype html>
 <html lang="fr" class="h-100">
 <head>
-    <%@include file="../base/head.jsp" %>
+    <%@include file="../../base/head.jsp" %>
     <title> Connection :  </title>
 </head>
 <body class="d-flex text-center text-white bg-dark">

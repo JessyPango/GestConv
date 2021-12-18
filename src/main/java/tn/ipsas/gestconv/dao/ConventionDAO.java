@@ -4,15 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import tn.ipsas.gestconv.bean.Convention;
-import tn.ipsas.gestconv.bean.Convention;
-import tn.ipsas.gestconv.db.connection.DatabaseConnectionFactory;
 import tn.ipsas.gestconv.utils.HibernateUtil;
 
-import java.sql.*;
-
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ConventionDAO {
@@ -22,7 +15,7 @@ public class ConventionDAO {
      */
     public static void saveConvention(Convention convention) {
         Transaction transaction = null;
-        try  {
+        try {
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
             Session session = sessionFactory.openSession();
             // start a transaction

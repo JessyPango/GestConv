@@ -14,8 +14,9 @@ import java.util.Locale;
 public class ConventionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.sendRedirect("/convention/add.jsp");
-        System.out.println("Do get Here !!!!!! ");
+        request.getServletContext()
+                .getRequestDispatcher("/templates/convention/add.jsp")
+                .forward(request, response);
     }
 
     @Override

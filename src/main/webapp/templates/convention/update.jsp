@@ -2,7 +2,7 @@
   Created by IntelliJ IDEA.
   User: jessy
   Date: 14/12/2021
-  Time: 12:17
+  Time: 12:19
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -11,16 +11,16 @@
 <!doctype html>
 <html lang="fr" class="h-100">
 <head>
-    <%@include file="../base/head.jsp" %>
-    <title> Enregistrer les paramettres de participation : </title>
+    <%@include file="../../base/head.jsp" %>
+    <title> Mise a jours des paramettres de conventions : </title>
 </head>
 <body class="d-flex text-center text-white bg-dark">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <%@include file="../base/header.html" %>
-    <div class="h1"> Enregistrer les paramettres de participation : </div>
-    <%--    TODO: Formulaire de création d'un participant--%>
+    <%@include file="../../base/header.jsp" %>
+    <div class="h1">  Mise a jours des paramettres de conventions : </div>
+    <%--    TODO:  Mise a jours des paramettres de conventions :--%>
 
-    <%@include file="../base/footer.html" %>
+    <%@include file="../../base/footer.jsp" %>
 </div>
 </body>
 </html>

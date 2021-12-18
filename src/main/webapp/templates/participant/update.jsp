@@ -11,16 +11,16 @@
 <!doctype html>
 <html lang="fr" class="h-100">
 <head>
-    <%@include file="../base/head.jsp" %>
-    <title> Mise a jours des paramettres de conventions : </title>
+    <%@include file="../../base/head.jsp" %>
+    <title> Mise a jours des paramettres de participation : </title>
 </head>
 <body class="d-flex text-center text-white bg-dark">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-    <%@include file="../base/header.html" %>
-    <div class="h1">  Mise a jours des paramettres de conventions : </div>
-    <%--    TODO:  Mise a jours des paramettres de conventions :--%>
+    <%@include file="../../base/header.jsp" %>
+    <div class="h1"> Enregistrer les paramettres de participation : </div>
+    <%--    TODO: Mise a jours des paramettres de participation :--%>
 
-    <%@include file="../base/footer.html" %>
+    <%@include file="../../base/footer.jsp" %>
 </div>
 </body>
 </html>

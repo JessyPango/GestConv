@@ -1,16 +1,19 @@
 package tn.ipsas.gestconv.bean;
 
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
+import org.hibernate.search.mapper.pojo.mapping.definition.annotation.KeywordField;
 import tn.ipsas.gestconv.dao.ConventionDAO;
 
 import javax.persistence.*;
-import javax.validation.constraints.PastOrPresent;
 import java.time.LocalDate;
 import java.util.List;
 
+@Indexed // Entité indexable
 @Entity
 @Table(name = "convention")
 public class Convention {
-    @Id
+    @Id // id pour l'indexation
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_convention", nullable = false)
     private Integer id;
@@ -19,6 +22,7 @@ public class Convention {
     private LocalDate dateEdition;
 
     @Column(name = "objet_convention", nullable = false)
+    @FullTextField // Covertir en texte plain avant d'indexer
     private String objetConvention;
 
     @Column(name = "date_entree_vigueur", nullable = false)
@@ -29,6 +33,7 @@ public class Convention {
 
     @Lob
     @Column(name = "type_convention")
+    @KeywordField // Non indexable
     private String typeConvention;
 
     public String getTypeConvention() {
@@ -86,15 +91,19 @@ public class Convention {
     public void saveConvention(Convention convention) {
         ConventionDAO.saveConvention(convention);
     }
+
     public void updateConvention(Convention convention) {
         ConventionDAO.updateConvention(convention);
     }
+
     public void deleteConvention(int id) {
         ConventionDAO.deleteConvention(id);
     }
-    public Convention getConvention(int id){
+
+    public Convention getConvention(int id) {
         return ConventionDAO.getConvention(id);
     }
+
     public List<Convention> getAllConvention() {
         return ConventionDAO.getAllConvention();
     }
