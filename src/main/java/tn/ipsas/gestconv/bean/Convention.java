@@ -1,15 +1,11 @@
 package tn.ipsas.gestconv.bean;
 
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.FullTextField;
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.Indexed;
-import org.hibernate.search.mapper.pojo.mapping.definition.annotation.KeywordField;
 import tn.ipsas.gestconv.dao.ConventionDAO;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@Indexed // Entité indexable
 @Entity
 @Table(name = "convention")
 public class Convention {
@@ -22,7 +18,6 @@ public class Convention {
     private LocalDate dateEdition;
 
     @Column(name = "objet_convention", nullable = false)
-    @FullTextField // Covertir en texte plain avant d'indexer
     private String objetConvention;
 
     @Column(name = "date_entree_vigueur", nullable = false)
@@ -31,17 +26,25 @@ public class Convention {
     @Column(name = "date_expiration", nullable = false)
     private LocalDate dateExpiration;
 
+    @Column(name = "titre_convention", nullable = false)
+    private String titreConvention;
+
     @Lob
     @Column(name = "type_convention")
-    @KeywordField // Non indexable
     private String typeConvention;
 
     public String getTypeConvention() {
         return typeConvention;
     }
+    public String getTitreConvention() {
+        return titreConvention;
+    }
 
     public void setTypeConvention(String typeConvention) {
         this.typeConvention = typeConvention;
+    }
+    public void setTitreConvention(String titreConvention) {
+        this.titreConvention = titreConvention;
     }
 
     public LocalDate getDateExpiration() {

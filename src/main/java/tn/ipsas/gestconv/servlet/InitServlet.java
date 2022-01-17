@@ -1,9 +1,8 @@
 package tn.ipsas.gestconv.servlet;
 
-import org.hibernate.search.mapper.orm.Search;
-import org.hibernate.search.mapper.orm.massindexing.MassIndexer;
-import org.hibernate.search.mapper.orm.session.SearchSession;
+import org.hibernate.Session;
 import tn.ipsas.gestconv.bean.Convention;
+import tn.ipsas.gestconv.utils.HibernateUtil;
 
 import javax.persistence.EntityManager;
 import javax.servlet.ServletException;
@@ -21,5 +20,6 @@ public class InitServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         // Indexage initiale par hibernate search
+
     }
 }

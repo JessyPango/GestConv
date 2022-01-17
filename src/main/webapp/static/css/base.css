@@ -38,7 +38,7 @@ body {
 
 #searchZone {
     padding-top: 100px;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
 }
 
 nav .nav-link:hover, nav .nav-link:focus {

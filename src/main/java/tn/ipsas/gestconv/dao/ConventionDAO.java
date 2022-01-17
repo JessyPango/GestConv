@@ -1,11 +1,15 @@
 package tn.ipsas.gestconv.dao;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import tn.ipsas.gestconv.bean.Convention;
 import tn.ipsas.gestconv.utils.HibernateUtil;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class ConventionDAO {
@@ -18,7 +22,6 @@ public class ConventionDAO {
         try {
             SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
             Session session = sessionFactory.openSession();
-            // start a transaction
             transaction = session.beginTransaction();
             // save the convention object
             session.save(convention);
@@ -68,7 +71,7 @@ public class ConventionDAO {
             Convention convention = session.get(Convention.class, id);
             if (convention != null) {
                 session.delete(convention);
-                System.out.println("Convention is deleted");
+//                System.out.println("Convention is deleted");
             }
 
             // commit transaction
@@ -129,6 +132,37 @@ public class ConventionDAO {
             }
             e.printStackTrace();
         }
+        return listOfConvention;
+    }
+
+    public static List<Convention> search(String q) {
+        List<Convention> listOfConvention = null;
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Convention> query = builder.createQuery( Convention.class );
+        Root<Convention> root = query.from( Convention.class );
+        query.select(root).where(
+                builder.like(root.get("objetConvention"), "%" + q +"%")
+        );
+        listOfConvention = session.createQuery(query).getResultList();
+
+        return listOfConvention;
+    }
+
+
+    public static List<Convention> advanced_search(String q, String type) {
+        List<Convention> listOfConvention = null;
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        CriteriaBuilder builder = session.getCriteriaBuilder();
+        CriteriaQuery<Convention> query = builder.createQuery( Convention.class );
+        Root<Convention> root = query.from( Convention.class );
+        query.select(root).where(
+                builder.like(root.get("objetConvention"), "%" + q +"%")
+        ).where(builder.like(root.get("typeConvention"), type));
+        listOfConvention = session.createQuery(query).getResultList();
+
         return listOfConvention;
     }
 }

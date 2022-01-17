@@ -36,7 +36,13 @@
                     <p class="small text-danger"> ${errMsg}</p>
 
                 </div>
-                <form method="post" action="addconv" >
+                <form method="post" action="${pageContext.request.contextPath}/admin/convention/add" >
+                    <div class="mb-3 row">
+                        <label for="titre_convention" class="col-sm-4 col-form-label">Titre Convention :</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="titre_convention" id="titre_convention" class="form-control">
+                        </div>
+                    </div>
                     <div class="mb-3 row">
                         <label for="type_convention" class="col-sm-4 col-form-label">Selectionner un type :</label>
                         <div class="col-sm-8">

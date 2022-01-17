@@ -2,60 +2,50 @@
   Created by IntelliJ IDEA.
   User: jessy
   Date: 14/12/2021
-  Time: 11:07
+  Time: 11:06
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-
 <t:genericpage>
     <jsp:attribute name="title">
-        <title> Gestion de convention</title>
-        <!-- CSS only -->
+        <title> En savoir plus </title>
     </jsp:attribute>
     <jsp:attribute name="css">
-
-<%--        <%@include file="/static/css/bootstrap.css"%>--%>
-    </jsp:attribute>
-    <jsp:attribute name="js">
-
     </jsp:attribute>
     <jsp:attribute name="header">
-            <jsp:include page="/templates/base/header.jsp"/>
+<%--            <header class="d-flex justify-content-center fixed-top bg-dark p-3">--%>
+<%--                <div class="d-flex flex-column flex-lg-row">--%>
+<%--                    <h3 class="float-md-start me-5"><a class="text-decoration-none" href="/index">Gestion de convention</a> </h3>--%>
+<%--                    <nav class="nav nav-masthead justify-content-center float-md-end align-middle">--%>
+<%--                        <a class="nav-link" aria-current="page" href="/index">Acceuil</a>--%>
+<%--                        <a class="nav-link" aria-current="page" href="/admin/convention/add">Ajouter une convention</a>--%>
+<%--                        <a class="nav-link" aria-current="page" href="/about">A propos</a>--%>
+<%--                        <a class="nav-link" href="/login">Se connecter</a>--%>
+<%--                        <a class="nav-link" href="/register">S'enregistrer</a>--%>
+<%--                    </nav>--%>
+<%--                </div>--%>
+<%--            </header>--%>
     </jsp:attribute>
     <jsp:attribute name="footer">
         <jsp:include page="/templates/base/footer.jsp" />
     </jsp:attribute>
     <jsp:body>
-        <c:if test="user != null">
-            <div> Welcome: ${user.login}-${user.id}</div>
-        </c:if>
-        <div id="searchZone">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Rechercher des conventions..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Rechercher</button>
+        <main class="px-3">
+            <div id="about">
+                <h1>Activités d’ouverture sur l’environnement</h1>
+                <p class="lead">
+                    Dans le cadre de ses activités d’ouverture sur l’environnement, l’Institut Polytechnique des
+                    Sciences Avancées de Sfax (IPSAS) établit des Conventions avec des industriels, des institutions
+                    universitaires,
+                    des instances régionales, des instances nationales et des institutions internationales.
+                </p>
+                <p class="lead">
+                    <a href="/index" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-dark">Participer</a>
+                </p>
             </div>
-            <div class="my-2">
-                <a href="" style="color: #6C757D">ou recherche avancé</a>
-            </div>
-        </div>
-
-        <div class="h1"> Liste des conventions :</div>
-        <c:forEach items="${conventions}" var="convention">
-            <div class="row mb-3 bg-light">
-                <div class="col-12">
-                    <div class="card bg-light">
-                        <div class="card-body text-black">
-                            <h5 class="card-title">convention---${convention.getId()}</h5>
-                            <p class="card-text">${convention.getObjetConvention()}</p>
-                            <a href="convention.url" class="btn btn-primary">Voir Plus</a>
-                            <a href="convention.url" class="btn btn-primary">Participer</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </c:forEach>
+        </main>
     </jsp:body>
 </t:genericpage>
