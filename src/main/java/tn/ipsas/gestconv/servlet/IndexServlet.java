@@ -3,6 +3,7 @@ package tn.ipsas.gestconv.servlet;
 import org.hibernate.Session;
 import tn.ipsas.gestconv.bean.Convention;
 import tn.ipsas.gestconv.dao.ConventionDAO;
+import tn.ipsas.gestconv.utils.AuthUtils;
 import tn.ipsas.gestconv.utils.HibernateUtil;
 
 import javax.servlet.*;
@@ -11,10 +12,14 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "index", urlPatterns ={"/participant/index"})
+@WebServlet(name = "index", urlPatterns ={"/index"})
 public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(AuthUtils.redirectToLoginIsNotLogin(request, response)){
+            return;
+        };
         String action = request.getParameter("next");
         List<Convention> conventions = null;
         if ( "search".equals(action) ) {

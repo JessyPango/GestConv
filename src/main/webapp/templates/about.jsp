@@ -32,7 +32,7 @@
                     des instances régionales, des instances nationales et des institutions internationales.
                 </p>
                 <p class="lead">
-                    <a href="participate" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-dark">Participer</a>
+                    <a href="/index" class="btn btn-lg btn-secondary fw-bold border-white bg-white text-dark">Participer</a>
                 </p>
             </div>
         </main>

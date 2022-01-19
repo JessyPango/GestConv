@@ -16,17 +16,16 @@ public class LoginServlet extends HttpServlet {
                 .getRequestDispatcher("/templates/auth/login.jsp")
                 .forward(request, response);
     }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String login = request.getParameter("login");
-        String motsDePasse = request.getParameter("motsDePasse");
+        String username = request.getParameter("username");
+        String password = request.getParameter("password");
         User user = new User();
-        user.setLogin(login);
-        user.setMotsDePasse(motsDePasse);
-        user = UserDAO.getUser(2);
-        HttpSession session = request.getSession();
+        user.setUsername(username);
+        user.setPassword(password);
+        user = UserDAO.getUser(username);
+        HttpSession session = request.getSession(true);
         session.setAttribute("user", user);
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("index");
     }
 }

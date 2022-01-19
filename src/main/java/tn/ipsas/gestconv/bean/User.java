@@ -10,60 +10,43 @@ import java.util.List;
 @Table(name = "user")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user", nullable = false)
-    private Integer id;
+    @Column(name = "username", nullable = false, unique = true, length = 45)
+    private String username;
 
-    @Column(name = "login", nullable = false, unique = true, length = 45)
-    private String login;
+    @Column(name = "password", nullable = false, length = 45)
+    private String password;
 
-    @Column(name = "mots_de_passe", nullable = false, length = 45)
-    private String motsDePasse;
+    @Column(name = "role", nullable = false, length = 45)
+    private String role;
 
-    public String getMotsDePasse() {
-        return motsDePasse;
+    public User() {
+        role = "USER";
     }
 
-    public void setMotsDePasse(String motsDePasse) {
-        this.motsDePasse = motsDePasse;
+    public String getUsername() {
+        return username;
     }
 
-    public String getLogin() {
-        return login;
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    public String getPassword() {
+        return password;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public String getRole() {
+        return role;
     }
 
-    public Integer getId() {
-        return id;
+    public void setRole(String role) {
+        this.role = role;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-    /*
-    TODO: REtirer le reste
-     */
     public Boolean isValidUser(){
-        System.out.println(login != null && motsDePasse != null);
-        return login != null && motsDePasse != null;
-    }
-
-    public void saveUser(User user) {
-        UserDAO.saveUser(user);
-    }
-    public void updateUser(User user) {
-        UserDAO.updateUser(user);
-    }
-    public void deleteUser(int id) {
-        UserDAO.deleteUser(id);
-    }
-    public User getUser(int id){
-        return UserDAO.getUser(id);
-    }
-    public List<User> getAllUser() {
-        return UserDAO.getAllUser();
+        System.out.println(username != null && password != null);
+        return username != null && password != null;
     }
 }

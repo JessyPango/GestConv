@@ -23,11 +23,11 @@ public class registerServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         String errMsg="";
-        String login = request.getParameter("login");
+        String username = request.getParameter("login");
         String motsDePasse = request.getParameter("motsDePasse");
         User user = new User();
-        user.setLogin(login);
-        user.setMotsDePasse(motsDePasse);
+        user.setUsername(username);
+        user.setPassword(motsDePasse);
 
         if (!user.isValidUser()){
             errMsg = "Paramettre d'enregistrement invalige";
@@ -36,10 +36,10 @@ public class registerServlet extends HttpServlet {
                 UserDAO.saveUser(user);
                 request.setAttribute("message", "Votre compte a été créer avec succes!" +
                         "<br> Entrez vos identifiant pour continuer.");
-                request.getServletContext()
-                        .getRequestDispatcher("login")
-                        .forward(request, response);
-                response.sendRedirect("auth/login.jsp");
+//                request.getServletContext()
+//                        .getRequestDispatcher("/templates/auth/login.jsp")
+//                        .forward(request, response);
+                response.sendRedirect("/login");
             } catch (Exception e) {
                 errMsg = e.getMessage();
                 request.getServletContext().setAttribute("errMsg", errMsg);

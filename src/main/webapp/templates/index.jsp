@@ -20,14 +20,15 @@
     <jsp:attribute name="header">
             <jsp:include page="/templates/base/header.jsp"/>
     </jsp:attribute>
-    User: <b>${request.getRemoteUser()}
     <jsp:attribute name="footer">
         <jsp:include page="/templates/base/footer.jsp"/>
     </jsp:attribute>
+        <jsp:attribute name="js"></jsp:attribute>
     <jsp:body>
-        <c:if test="user != null">
-            <div> Welcome: ${user.login}-${user.id}</div>
-        </c:if>
+
+<%--        <c:if test="user != null">--%>
+<%--            <div> Welcome: ${user.}</div>--%>
+<%--        </c:if>--%>
 
         <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
             <symbol id="check-circle-fill" fill="currentColor" viewBox="0 0 16 16">
